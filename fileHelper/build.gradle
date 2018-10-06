@@ -1,0 +1,25 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.annimon:stream:1.2.1'
+    implementation 'org.antlr:ST4:4.0.8'
+    api 'com.google.auto.service:auto-service:1.0-rc4'
+    api 'com.squareup:javapoet:1.11.1'
+
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+tasks.withType(JavaCompile) {//防止編碼問題
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {//防止編碼問題
+    excludes = ['**/*.java']
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
