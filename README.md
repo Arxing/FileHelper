@@ -11,7 +11,7 @@ FileHelper is a library for quickly building java file, xml file. Based on [Java
 
 #### Structure
 
-+ [JavaFileHelper](#JavaFileHelper)
++ [JavaFileHelper](#javafilehelper)
 + TypeHelper
   + TypeClassHelper
   + TypeEnumHelper
@@ -22,7 +22,7 @@ FileHelper is a library for quickly building java file, xml file. Based on [Java
 + FieldHelper
 + ArgsMap
 
-##### JavaFileHelper
+# JavaFileHelper
 
 
 ### Xml
