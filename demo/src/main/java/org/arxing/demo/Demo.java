@@ -6,7 +6,7 @@ import java.lang.Object;
 public class Demo {
     public int a = 1000;
 
-    @Deprecated @Main.DemoAnnotation(testValue = "Sandy") void demoMethod() {
+    @Deprecated @JavaMain.DemoAnnotation(testValue = "Sandy") void demoMethod() {
         int a = 0;
     }
 
@@ -22,9 +22,7 @@ public class Demo {
 
     public enum Mode {
         A(100),
-
         B(101),
-
         C(102);
 
         public int val;
@@ -34,6 +32,6 @@ public class Demo {
         }
     }
 
-    public static class Nested extends Main.DemoSuperClass {
+    public static class Nested extends JavaMain.DemoSuperClass {
     }
 }

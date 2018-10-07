@@ -4,7 +4,7 @@ import com.squareup.javapoet.AnnotationSpec;
 
 import org.arxing.fileHelper.java.ArgsMap;
 import org.arxing.fileHelper.java.FieldHelper;
-import org.arxing.fileHelper.java.FileHelper;
+import org.arxing.fileHelper.java.JavaFileHelper;
 import org.arxing.fileHelper.java.MethodHelper;
 import org.arxing.fileHelper.java.TypeAnnotationHelper;
 import org.arxing.fileHelper.java.TypeClassHelper;
@@ -14,11 +14,11 @@ import org.arxing.fileHelper.java.TypeInterfaceHelper;
 
 import javax.lang.model.element.Modifier;
 
-public class Main {
+public class JavaMain {
 
     public static void main(String[] args) {
         TypeHelper rootType = TypeHelper.buildClass("Demo").addModifiers(Modifier.PUBLIC);
-        FileHelper fileHelper = FileHelper.build("org.arxing.demo", rootType).setIndentSpaceSize(4);
+        JavaFileHelper fileHelper = JavaFileHelper.build("org.arxing.demo", rootType).setIndentSpaceSize(4);
 
         MethodHelper demoMethod = MethodHelper.build("demoMethod")
                                               .addAnnotation(Deprecated.class)
@@ -65,7 +65,7 @@ public class Main {
         rootType.toClass().bindMethod(demoMethodInvoke);
         demoMethodInvoke.addStatement("int a=0");
 
-        fileHelper.create(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        fileHelper.create(JavaMain.class.getProtectionDomain().getCodeSource().getLocation().getPath());
     }
 
     public static class DemoSuperClass {

@@ -11,20 +11,20 @@ import java.util.List;
 
 import javax.annotation.processing.Filer;
 
-public class FileHelper {
+public class JavaFileHelper {
     private String pkg;
     private TypeHelper rootType;
     private List<CodeInfo> comments;
     private int indentSpaceSize = 4;
 
-    private FileHelper(String pkg, TypeHelper type) {
+    private JavaFileHelper(String pkg, TypeHelper type) {
         this.rootType = type;
         this.pkg = pkg;
         this.comments = new ArrayList<>();
     }
 
-    public static FileHelper build(String pkg, TypeHelper type) {
-        return new FileHelper(pkg, type);
+    public static JavaFileHelper build(String pkg, TypeHelper type) {
+        return new JavaFileHelper(pkg, type);
     }
 
     public JavaFile create() {
@@ -36,19 +36,19 @@ public class FileHelper {
 
     // comment
 
-    public FileHelper addComment(String template, Object... templateArgs) {
+    public JavaFileHelper addComment(String template, Object... templateArgs) {
         comments.add(new CodeInfo(template, templateArgs));
         return this;
     }
 
-    public FileHelper addComment(String template, ArgsMap argsMap, Object... templateArgs) {
+    public JavaFileHelper addComment(String template, ArgsMap argsMap, Object... templateArgs) {
         comments.add(new CodeInfo(JavaUtils.renderCode(template, argsMap), templateArgs));
         return this;
     }
 
     // indent
 
-    public FileHelper setIndentSpaceSize(int size) {
+    public JavaFileHelper setIndentSpaceSize(int size) {
         indentSpaceSize = size;
         return this;
     }
