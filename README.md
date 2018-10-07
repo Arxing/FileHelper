@@ -118,5 +118,20 @@ public class Demo {
 }
 ```
 
-
 ### Xml
+
+#### Structure
+
+#### Resources
+
++ declare-styleable
++ color
++ integer
++ string
++ string-array
++ dimen
++ id
+
+
+
+
