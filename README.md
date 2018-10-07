@@ -1,5 +1,9 @@
 # FileHelper
 
+![](https://img.shields.io/badge/language-java-orange.svg) 
+![](https://img.shields.io/badge/latest-1.0.0-blue.svg)
+![](https://img.shields.io/badge/jdk-1.8-yellow.svg)
+
 FileHelper is a library for quickly building java file, xml file. Based on [JavaPoet](https://github.com/square/javapoet)
 
 ## Dependency
@@ -118,7 +122,7 @@ public class Demo {
 }
 ```
 
-### Xml
+### Xml(Building)
 
 #### Structure
 
